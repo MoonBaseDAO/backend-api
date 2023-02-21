@@ -1,9 +1,15 @@
 import axios from 'axios';
+//import { logger } from '../utils/logger';
 
 export const modifyMessage = (req, res, next) => {
-  req.body.message = `SAYS: ${req.body.message}`;
+  req.body.message = `${req.body.message}`;
   next();
 };
+
+//export const modifyUser = (req, res, next) => {
+//  req.body.user = `${req.body.user}`;
+//  next();
+//};
 
 export const performAsyncAction = async (req, res, next) => {
   try {

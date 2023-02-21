@@ -17,7 +17,7 @@ describe('Messages', () => {
   });
 
   it('posts messages', done => {
-    const data = { name: 'some name', message: 'new message' };
+    const data = { name: 'elite hacker', message: 'new userId saved' };
     server
       .post(`${BASE_URL}/messages`)
       .send(data)
@@ -28,7 +28,7 @@ describe('Messages', () => {
         res.body.messages.forEach(m => {
           expect(m).to.have.property('id');
           expect(m).to.have.property('name', data.name);
-          expect(m).to.have.property('message', `SAYS: ${data.message}`);
+          expect(m).to.have.property('message', `${data.message}`);
         });
         done();
       });
