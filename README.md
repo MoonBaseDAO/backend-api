@@ -18,3 +18,4 @@ yarn runQuery
 yarn run startdev
 ```
 Goto localhost:3001
+Goto localhost:3001/api-docs for API Docs
