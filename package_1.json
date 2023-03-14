@@ -1,0 +1,30 @@
+const express = require('express');
+const cors = require('cors');
+const app = express();
+const port = process.env.PORT || 3000;
+const db = require('./db');
+
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// import routes
+const taskRoutes = require('./routes/tasks');
+const commentRoutes = require('./routes/comments');
+const attachmentRoutes = require('./routes/attachments');
+const userRoutes = require('./routes/users');
+const projectRoutes = require('./routes/projects');
+const teamRoutes = require('./routes/teams');
+
+// set up routes
+app.use('/tasks', taskRoutes);
+app.use('/comments', commentRoutes);
+app.use('/attachments', attachmentRoutes);
+app.use('/users', userRoutes);
+app.use('/projects', projectRoutes);
+app.use('/teams', teamRoutes);
+
+// listen to requests
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}.`);
+});
