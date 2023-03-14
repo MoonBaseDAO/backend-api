@@ -12,3 +12,9 @@ Live API endpoint: <http://moonbase.info.gf:3000/v1>
 ### Under Construction Endpoints:
 /userId --> generates a unique userId key to store in postgres db & to use as an endpoint for generating a userId and storing user's of front-end clients 
 
+### To Get Started
+```bash
+yarn runQuery
+yarn run startdev
+```
+Goto localhost:3001
